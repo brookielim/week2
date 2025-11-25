@@ -68,44 +68,46 @@
 
   <div class="fruit-row">
     <div class="fruit">
-      <img id="apple" src="apple-1.png" data-step="1" alt="apple" />
+      <img id="apple" src="Apple-1.png" data-step="1" alt="apple" />
     </div>
     <div class="fruit">
-      <img id="strawberry" src="strawberry-1.png" data-step="1" alt="strawberry" />
+      <img id="strawberry" src="Strawberry-1.png" data-step="1" alt="strawberry" />
     </div>
     <div class="fruit">
-      <img id="peach" src="peach-1.png" data-step="1" alt="peach" />
+      <img id="peach" src="Peach-1.png" data-step="1" alt="peach" />
     </div>
   </div>
 
   <script>
     const appleImages = [
-      "apple-1.png",
-      "apple-2.png",
-      "apple-3.png",
-      "apple-4.png",
-      "apple-5.png"
+      "Apple-1.png",
+      "Apple-2.png",
+      "Apple-3.png",
+      "Apple-4.png",
+      "Apple-5.png"
     ];
 
     const strawberryImages = [
-      "strawberry-1.png",
-      "strawberry-2.png",
-      "strawberry-3.png",
-      "strawberry-4.png",
-      "strawberry-5.png"
+      "Strawberry-1.png",
+      "Strawberry-2.png",
+      "Strawberry-3.png",
+      "Strawberry-4.png",
+      "Strawberry-5.png"
     ];
 
     const peachImages = [
-      "peach-1.png",
-      "peach-2.png",
-      "peach-3.png",
-      "peach-4.png",
-      "peach-5.png"
+      "Peach-1.png",
+      "Peach-2.png",
+      "Peach-3.png",
+      "Peach-4.png",
+      "Peach-5.png"
     ];
 
     const biteSound = new Audio("apple.mp3");
 
     function enableFruitEating(img, images) {
+      img.src = images[0];
+
       img.addEventListener("click", () => {
         let step = Number(img.dataset.step);
 
