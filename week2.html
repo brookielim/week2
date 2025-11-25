@@ -62,48 +62,50 @@
 </head>
 <body>
 
-  <a href="../collection.html" class="back">< back</a>
+  <a href="collection.html" class="back">< back</a>
 
   <h1>click your favorite fruit</h1>
 
   <div class="fruit-row">
     <div class="fruit">
-      <img id="apple" src="Apple-1.png" data-step="1" alt="apple" />
+      <img id="apple" data-step="1" alt="apple" />
     </div>
     <div class="fruit">
-      <img id="strawberry" src="Strawberry-1.png" data-step="1" alt="strawberry" />
+      <img id="strawberry" data-step="1" alt="strawberry" />
     </div>
     <div class="fruit">
-      <img id="peach" src="Peach-1.png" data-step="1" alt="peach" />
+      <img id="peach" data-step="1" alt="peach" />
     </div>
   </div>
 
   <script>
+    const path = "./";
+
     const appleImages = [
-      "Apple-1.png",
-      "Apple-2.png",
-      "Apple-3.png",
-      "Apple-4.png",
-      "Apple-5.png"
+      path + "apple-1.png",
+      path + "apple-2.png",
+      path + "apple-3.png",
+      path + "apple-4.png",
+      path + "apple-5.png"
     ];
 
     const strawberryImages = [
-      "Strawberry-1.png",
-      "Strawberry-2.png",
-      "Strawberry-3.png",
-      "Strawberry-4.png",
-      "Strawberry-5.png"
+      path + "strawberry-1.png",
+      path + "strawberry-2.png",
+      path + "strawberry-3.png",
+      path + "strawberry-4.png",
+      path + "strawberry-5.png"
     ];
 
     const peachImages = [
-      "Peach-1.png",
-      "Peach-2.png",
-      "Peach-3.png",
-      "Peach-4.png",
-      "Peach-5.png"
+      path + "peach-1.png",
+      path + "peach-2.png",
+      path + "peach-3.png",
+      path + "peach-4.png",
+      path + "peach-5.png"
     ];
 
-    const biteSound = new Audio("apple.mp3");
+    const biteSound = new Audio(path + "apple.mp3");
 
     function enableFruitEating(img, images) {
       img.src = images[0];
