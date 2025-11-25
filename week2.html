@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Week2 Fruit</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Numans&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      font-family: "Montserrat Alternates", sans-serif;
+    }
+
+    h1 {
+      font-size: 18px;
+      margin-bottom: 40px;
+      font-weight: 700;
+      text-align: center;
+      text-transform: lowercase;
+    }
+
+    .fruit-row {
+      display: flex;
+      gap: 80px;
+    }
+
+    .fruit {
+      cursor: pointer;
+      transition: transform 0.08s ease;
+    }
+
+    .fruit:active {
+      transform: scale(0.97);
+    }
+
+    .fruit img {
+      width: 220px;
+      height: auto;
+      display: block;
+    }
+
+    .back {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      font-size: 16px;
+      font-family: 'Numans', sans-serif;
+      color: #666;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="../collection.html" class="back">< back</a>
+
+  <h1>click your favorite fruit</h1>
+
+  <div class="fruit-row">
+    <div class="fruit">
+      <img id="apple" src="apple-1.png" data-step="1" alt="apple" />
+    </div>
+    <div class="fruit">
+      <img id="strawberry" src="strawberry-1.png" data-step="1" alt="strawberry" />
+    </div>
+    <div class="fruit">
+      <img id="peach" src="peach-1.png" data-step="1" alt="peach" />
+    </div>
+  </div>
+
+  <script>
+    const appleImages = [
+      "apple-1.png",
+      "apple-2.png",
+      "apple-3.png",
+      "apple-4.png",
+      "apple-5.png"
+    ];
+
+    const strawberryImages = [
+      "strawberry-1.png",
+      "strawberry-2.png",
+      "strawberry-3.png",
+      "strawberry-4.png",
+      "strawberry-5.png"
+    ];
+
+    const peachImages = [
+      "peach-1.png",
+      "peach-2.png",
+      "peach-3.png",
+      "peach-4.png",
+      "peach-5.png"
+    ];
+
+    const biteSound = new Audio("apple.mp3");
+
+    function enableFruitEating(img, images) {
+      img.addEventListener("click", () => {
+        let step = Number(img.dataset.step);
+
+        if (step < images.length) {
+          img.src = images[step];
+          img.dataset.step = step + 1;
+
+          biteSound.currentTime = 0;
+          biteSound.play();
+        }
+      });
+    }
+
+    enableFruitEating(document.getElementById("apple"), appleImages);
+    enableFruitEating(document.getElementById("strawberry"), strawberryImages);
+    enableFruitEating(document.getElementById("peach"), peachImages);
+  </script>
+</body>
+</html>
